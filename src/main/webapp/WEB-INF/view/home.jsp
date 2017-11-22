@@ -25,6 +25,7 @@
          vspace="5" hspace="100"/>
     <%--здесь обращение к маппингу метода контролллера, а не к маппингу ресурсов--%>
     <h2><a href="${pageContext.request.contextPath}/hell/showForm">hell form</a></h2>
+<h3><a href="${pageContext.request.contextPath}/stud/showForm">student-form</a> </h3>
 
 </body>
 </html>
