@@ -20,6 +20,8 @@
     Т.о., если есть файл /static/images/logo.png, то запрос к нему будет: /static/logo.png-->
     <mvc:resources mapping="/static/**" location="classpath:static/, /static/images/"/>
     <util:properties id="favoriteDishOptions" location="classpath:favoriteDishes.properties"/>
+    <util:properties id="favLangOptions" location="classpath:favoriteLanguages.properties"/>
+    <util:properties id="favOS" location="classpath:favoriteOS.properties"/>
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/view/"/>
         <property name="suffix" value=".jsp"/>

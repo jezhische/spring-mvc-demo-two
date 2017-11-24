@@ -15,6 +15,18 @@
     Student favorite rock band: ${student.favoriteRockBand}
     <br/><br/>
     Student favorite dish: ${student.favoriteDish}
+    <br/><br/>
+    Student favorite language: ${student.favoriteLanguage}
+    <br/><br/>
+        Student favorite OS: ${student.favoriteOpSystems}
+    <br/><br/>
+        <%--<ul> - unordered list--%>
+        <ul>
+            <%--<li> - list items (collection of list items)--%>
+            <li>
+
+            </li>
+        </ul>
     </h3>
     <br/><br/><hr/><br/><br/>
     <h2 align="center"><a href="${pageContext.request.contextPath}/stud/showForm">back to submit page \ </a>

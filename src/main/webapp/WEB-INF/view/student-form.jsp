@@ -10,6 +10,7 @@
     <body>
     <h1 align="center">Student-form version 2</h1>
 
+    <h4>
     <form:form action="${pageContext.request.contextPath}/stud/processFormi" modelAttribute="student">
         Student name:       <form:input path="name"/>
         <br/><br/>
@@ -26,6 +27,7 @@
         <br/><br/>
         Favorite Rock Band:
         <form:select path="favoriteRockBand">
+            <%--здесь для наполнения выпадающего списка обращаемся к map, созданной в объекте student--%>
             <form:options items="${student.favoriteRockBandOptions}"/>
         </form:select>
         <br/><br/>
@@ -37,9 +39,20 @@
                 <form:options items="${theFavDishOptions}"/>
             </form:select>
         <br/><br/>
+        Favorite language:
+        <%--поле private String favoriteLanguage бина student будет назначено через сеттер--%>
+        <%--мы можем прописать каждую radiobutton вот так:--%>
+        <%--Java<form:radiobutton path="favoriteLanguage" value="Java 8 the best!"/>--%>
+        <%--или добавить все кнопки списом, обратившись к атрибуту модели:--%>
+        <form:radiobuttons path="favoriteLanguage" items="${theFavLangOptions}"/>
+        <br/><br/>
+        Favorite OS:
+        <form:checkboxes path="favoriteOpSystems" items="${student.favOSOptions}"/>
+        <br/><br/>
         <input type="submit" value="SUBMIT"/>
         <br/><br/>
     </form:form>
+    </h4>
     <hr/><br/><br/>
     <a href="${pageContext.request.contextPath}"><h3>home</h3></a>
     </body>

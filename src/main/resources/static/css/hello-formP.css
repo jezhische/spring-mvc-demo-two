@@ -3,4 +3,6 @@ body { background-color: #e0ffcf}
 h3 { text-align: center;
     color: chocolate;
     font-family: "Arial Black";
-    font-size: 30px;}
+    font-size: 20px;}
+h4 { font-family: "Arial";
+     font-size: 15px;}
