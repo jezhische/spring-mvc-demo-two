@@ -5,6 +5,8 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
@@ -12,9 +14,12 @@ import java.util.stream.Collectors;
 @Component("studiosus")
 public class StudentImpl implements Student {
 
-    private String name = "default_name_value";
-    private String surname = "default_surname_value";
-    private String country = "select_country";
+    private String name;
+
+//    @NotNull(message = "is required")
+//    @Size(min = 2, message = "min 2 characters is requred")
+    private String surname;
+    private String country;
 
     private String favoriteRockBand;
     private LinkedHashMap<String, String> favoriteRockBandOptions;

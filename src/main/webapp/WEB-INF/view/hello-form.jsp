@@ -14,7 +14,7 @@
 а  http://localhost:8083/processForm?name=fffdfd
 todo: однако, если в приложении больше одного метода с именем "processForm", то "${pageContext.request.contextPath}/hell/processForm"
 Здесь используется form из html, если я не ошибаюсь--%>
-<form action="processForm" method="get">
+<form action="${pageContext.request.contextPath}/hell/processForm" method="get">
     <input type="text" name="name" placeholder="name"/> <br/>
     <input type="text" name="surname" placeholder="surname"/>
     <input type="submit" value="Try And Go!"/>

@@ -11,10 +11,13 @@
     <h1 align="center">Student-form version 2</h1>
 
     <h4>
-    <form:form action="${pageContext.request.contextPath}/stud/processFormi" modelAttribute="student">
-        Student name:       <form:input path="name"/>
+        <%--The fields marked with asterisk (*) are required--%>
         <br/><br/>
-        Student surname:    <form:input path="surname"/>
+    <form:form action="${pageContext.request.contextPath}/stud/processFormi" modelAttribute="student">
+        First name:       <form:input path="name"/>
+        <br/><br/>
+        Last name(*):    <form:input path="surname"/>
+        <%--<form:errors path="surname" cssClass="error"/>--%>
         <br/><br/>
         Country:
         <%--value -значение, которое будет передано модели; label - то, что показывается в списке--%>
@@ -43,10 +46,11 @@
         <%--поле private String favoriteLanguage бина student будет назначено через сеттер--%>
         <%--мы можем прописать каждую radiobutton вот так:--%>
         <%--Java<form:radiobutton path="favoriteLanguage" value="Java 8 the best!"/>--%>
-        <%--или добавить все кнопки списом, обратившись к атрибуту модели:--%>
+        <%--или добавить все кнопки списком, обратившись к атрибуту модели:--%>
         <form:radiobuttons path="favoriteLanguage" items="${theFavLangOptions}"/>
         <br/><br/>
         Favorite OS:
+        <%--здесь обращаемся к атрибуту класса student и передаем все кнопки списком--%>
         <form:checkboxes path="favoriteOpSystems" items="${student.favOSOptions}"/>
         <br/><br/>
         <input type="submit" value="SUBMIT"/>

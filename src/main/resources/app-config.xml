@@ -26,4 +26,11 @@
         <property name="prefix" value="/WEB-INF/view/"/>
         <property name="suffix" value=".jsp"/>
     </bean>
+    <!--load custom message resources:-->
+    <!--(inside are: error type.model attribute name.field name); bean id must be exactly the same as following:-->
+    <bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+<!--as the properties file location is src/resources/messages.properties, so its value="messages" ("/resources" is root,
+and Spring automatically appends .properties-->
+        <property name="basenames" value="messages"/>
+    </bean>
 </beans>

@@ -5,11 +5,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import javax.annotation.PostConstruct;
-import javax.enterprise.context.Initialized;
+import javax.validation.Valid;
 import java.util.Comparator;
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -41,7 +41,6 @@ public class CStudentController {
 //        studiosus.setFavOSOptions(studiosus.reverseSortAndSwapKeyValue(studiosus.getFavOSOptions()));
         model.addAttribute("student", studiosus /*new StudentImpl()*/);
         favoriteDishOptions = favoriteDishOptions.entrySet().stream()
-//                попробовать в реверсивном порядке
                 .sorted(Comparator.comparing(Map.Entry::getValue))
                 .collect(LinkedHashMap::new,
                         (map, entry) -> map.put(entry.getKey(), entry.getValue()),
@@ -58,7 +57,9 @@ public class CStudentController {
     }
 
     @RequestMapping("/processFormi")
-    public String procF(@ModelAttribute("student") StudentImpl student) {
-        return "student-confirmation";
+    public String procF(/*@Valid */@ModelAttribute("student") StudentImpl student, BindingResult bindingResult) {
+        if (bindingResult.hasErrors())
+            return "student-form";
+        else return "student-confirmation";
     }
 }

@@ -24,8 +24,9 @@
          alt="Иллюстрация" align="right"
          vspace="5" hspace="100"/>
     <%--здесь обращение к маппингу метода контролллера, а не к маппингу ресурсов--%>
-    <h2><a href="${pageContext.request.contextPath}/hell/showForm">hell form</a></h2>
-<h3><a href="${pageContext.request.contextPath}/stud/showForm">student-form</a> </h3>
+    <h2><a href="hell/showForm">hell form</a></h2>
+<h3><a href="stud/showForm">student-form</a> </h3>
+<h2><a href="customer/showForm">customer-form</a> </h2>
 
 </body>
 </html>

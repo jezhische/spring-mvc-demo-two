@@ -18,14 +18,14 @@
     <br/><br/>
     Student favorite language: ${student.favoriteLanguage}
     <br/><br/>
-        Student favorite OS: ${student.favoriteOpSystems}
-    <br/><br/>
-        <%--<ul> - unordered list--%>
+        Student favorite OS:
+        <%--пользуемся библиотекой jstl--%>
+    <%--<ul> - unordered list--%>
         <ul>
             <%--<li> - list items (collection of list items)--%>
-            <li>
-
-            </li>
+            <c:forEach var="temp" items="${student.favoriteOpSystems}">
+                <li>${temp}</li>
+            </c:forEach>
         </ul>
     </h3>
     <br/><br/><hr/><br/><br/>
