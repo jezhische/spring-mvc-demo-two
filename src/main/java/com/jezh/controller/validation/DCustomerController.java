@@ -20,7 +20,7 @@ import javax.validation.Valid;
 public class DCustomerController {
 
     @Autowired
-    Customer customer;
+    private Customer customer;
 
     @RequestMapping("/processForm")
     //    results of validation will be placed in the BindingResult

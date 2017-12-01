@@ -41,6 +41,6 @@ public class BHellController {
     @RequestMapping("showForm")
     public String showF(Model model) {
         model.addAttribute("student", new StudentImpl());
-        return "hello-form";
+        return "hello-foram";
     }
 }

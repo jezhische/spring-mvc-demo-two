@@ -5,6 +5,7 @@
 <html>
 <head>
     <title>customer-confirmation</title>
+    <%--<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />--%>
     <link rel="stylesheet" href=<c:url value="/static/css/customer-confirmationP.css"/>/>
 </head>
 <body>
@@ -16,6 +17,10 @@
     Free passes: ${custy.freePasses}
     <br/><br/>
     Postal Code: ${custy.postalCode}
+    <br/><br/>
+    Course Code: ${custy.courseCode}
+    <br/><br/>
+    Alias: ${custy.alias}
     <br/><br/>
 </h3>
 <h2>

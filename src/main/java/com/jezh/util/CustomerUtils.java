@@ -1,7 +1,14 @@
 package com.jezh.util;
 
+import org.jetbrains.annotations.Contract;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+
 public class CustomerUtils {
-    public static String replaceFirstChar(String formContent) {
+    @Contract("null -> null")
+    public static String replaceFirstCharWithTrim(String formContent) {
         if (formContent == null)
             return null;
         else {
@@ -16,10 +23,17 @@ public class CustomerUtils {
         }
     }
 
+    @Contract("null -> null")
     public static String afterInitBinderReplaceFirstChar(String formContent) {
         if (formContent == null) return null;
         else {String firstChar = String.valueOf(formContent.charAt(0));
         return formContent.replaceFirst("[" + firstChar + "]",
                 firstChar.toUpperCase());}
+    }
+
+    public static boolean checkCourseCode(String pattern, String courseCode) {
+        Pattern thePattern = Pattern.compile("^(" + pattern + "*)");
+        Matcher matcher = thePattern.matcher(courseCode);
+        return matcher.find();
     }
 }

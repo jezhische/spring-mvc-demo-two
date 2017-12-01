@@ -5,11 +5,13 @@
 <html>
 <head>
     <title>customer-form</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <spring:url value="/static/css/customer-formP.css" var="cSs"/>
     <link href="${cSs}" rel="stylesheet"/>
-    <style>
-        .error {color: red}
-    </style>
+    <%--создание .error класса я вынес в css--%>
+    <%--<style>--%>
+        <%--.error {color: red}--%>
+    <%--</style>--%>
 </head>
 <body>
 <h2>Customer Form Page</h2>
@@ -28,6 +30,12 @@
     <br/><br/>
     Postal code: <form:input path="postalCode"/>
     <form:errors path="postalCode" cssClass="error"/>
+    <br/><br/>
+    Course Code: <form:input path="courseCode"/>
+    <form:errors path="courseCode" cssClass="error"/>
+    <br/><br/>
+    Alias: <form:input path="alias"/>
+    <form:errors path="alias" cssClass="error"/>
     <br/><br/>
     <input type="submit" value="Submit"/>
     <br/><br/>
