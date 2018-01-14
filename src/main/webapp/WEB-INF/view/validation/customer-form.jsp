@@ -9,9 +9,9 @@
     <spring:url value="/static/css/customer-formP.css" var="cSs"/>
     <link href="${cSs}" rel="stylesheet"/>
     <%--создание .error класса я вынес в css--%>
-    <%--<style>--%>
-        <%--.error {color: red}--%>
-    <%--</style>--%>
+        <%--<style>--%>
+            <%--.error {color: red}--%>
+        <%--</style>--%>
 </head>
 <body>
 <h2>Customer Form Page</h2>
